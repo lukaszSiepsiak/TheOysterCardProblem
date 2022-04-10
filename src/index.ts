@@ -8,11 +8,11 @@ const oysterCard = new OysterCard();
 oysterCard.rechargeCard(30);
 console.log("After recharged card", oysterCard.balance);
 oysterCard.setStartStation(
-  OysterCardStationsData.HOLBORN,
+  OysterCardStationsData.EARLS_COURT,
   OysterCardTransportTypeEnum.TUBE
 );
 oysterCard.enterStation();
-oysterCard.setEndStation(OysterCardStationsData.WIMBLEDON);
+oysterCard.setEndStation(OysterCardStationsData.HAMMERSMITH);
 oysterCard.exitStation();
 console.log(
   "After setting end station and exiting station",
