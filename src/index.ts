@@ -12,7 +12,7 @@ oysterCard.setStartStation(
   OysterCardTransportTypeEnum.TUBE
 );
 oysterCard.enterStation();
-oysterCard.setEndStation(OysterCardStationsData.EARLS_COURT);
+oysterCard.setEndStation(OysterCardStationsData.WIMBLEDON);
 oysterCard.exitStation();
 console.log(
   "After setting end station and exiting station",

@@ -101,7 +101,25 @@ describe("Oyster card problem tests:", () => {
 
     card.exitStation();
 
-    expect(card.balance).toEqual(27);
+    expect(card.balance).toEqual(27.5);
+  });
+  it("should create card, enter station, set start station to Earl's Court and transport type to Tube, set end station to Wimbledon and get balance with exiting station, balance be equal to 27.75 ", () => {
+    const card = new OysterCard();
+
+    card.rechargeCard(30);
+
+    card.setStartStation(
+      OysterCardStationsData.EARLS_COURT,
+      OysterCardTransportTypeEnum.TUBE
+    );
+
+    card.enterStation();
+
+    card.setEndStation(OysterCardStationsData.WIMBLEDON);
+
+    card.exitStation();
+
+    expect(card.balance).toEqual(27.75);
   });
 
   it("should create card, enter station, set start station to Holborn and transport type to Tube, set end station to Wimbledon and get balance with exiting station, balance be equal to 26.8 ", () => {

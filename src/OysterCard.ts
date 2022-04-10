@@ -171,11 +171,13 @@ export class OysterCard {
   ): number {
     let count = 0;
 
-    startStation.forEach((startZone) => {
-      endStation.forEach((endZone) => {
-        count = Math.abs(startZone - endZone) + 1;
-      });
-    });
+    for (let indexStart = 0; indexStart < startStation.length; indexStart++) {
+      for (let indexEnd = 0; indexEnd < endStation.length; indexEnd++) {
+        count = Math.abs(startStation[indexStart] - endStation[indexEnd]) + 1;
+
+        if (count === 1) break;
+      }
+    }
 
     return count;
   }
@@ -184,6 +186,9 @@ export class OysterCard {
     startStation: number[],
     endStation: number[]
   ): boolean {
-    return startStation.includes(1) || endStation.includes(1);
+    return (
+      (startStation.length == 1 && startStation.includes(1)) ||
+      (endStation.length == 1 && endStation.includes(1))
+    );
   }
 }
