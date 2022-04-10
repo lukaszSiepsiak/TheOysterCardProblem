@@ -131,9 +131,8 @@ export class OysterCard {
   }
 
   private clearStations(): void {
-    Object.keys(this._stations).forEach((station: string, index: number) => {
-      delete this._stations[index];
-    });
+    delete this._stations[OysterCardsStationTypeEnum.START_STATION];
+    delete this._stations[OysterCardsStationTypeEnum.END_STATION];
   }
 
   private calculateFinalFare(
